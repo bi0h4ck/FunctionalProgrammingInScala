@@ -15,5 +15,6 @@ object session {
     sqrtInt(1.0)
 
   }
+sqrt(16.0) // res0: Double = 4.000000636692939
 
 }
