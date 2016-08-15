@@ -1,8 +1,11 @@
 def add(x: Int, y: Int) = x + y
 def sub(x: Double, y: Double) = x - y
 
-add(4, 9)
-println(add(sub(45, 5).round.toInt, sub(3, 78).round.toInt))
+add(4, 9) //res0: Int = 13
+println(add(sub(45, 5).round.toInt, sub(3, 78).round.toInt)) //
+//-35
+//res1: Unit = ()
+
 /*
 * Any is the utmost super type and is the parent of everything
 * AnyVal is the parent of the primitive types
@@ -21,7 +24,7 @@ def numberStatus(a: Int) =
   else if (a > 10) "Greater than 10"
   else "It is 10!"
 
-numberStatus(7)
+numberStatus(7) //res2: String = Less than 10
 
 
 /*
@@ -46,7 +49,7 @@ def factorial(n: BigInt): BigInt = {
   else n * factorial(n - 1)
 }
 
-factorial(6)
+factorial(6) //res3: BigInt = 720
 
 /*
 * Recursive methods may run out of stack memory
@@ -62,7 +65,8 @@ def fact(n: BigInt, acc: BigInt): BigInt = {
   else fact(n - 1, acc * n)
 }
 
-def factorial2(n: Int) = fact(n, 1)
+def factorial2(n: Int) = fact(n, 1) //720 res4: Unit = ()
+
 
 
 println(factorial2(6))
@@ -87,7 +91,7 @@ OpChars if surrounded by a backtick
 */
 def `Summation of` (x: Int, y: Int) = x + y
 
-`Summation of`(3, 4)
+`Summation of`(3, 4) //res5: Int = 7
 
 /*
 * Methods may be referenced without a backtick if they are not reserved.
@@ -112,14 +116,15 @@ def addNum(x: Int) = x + 2
 def addNum(x: Double) = x + 10.0
 def addNum(x: String) = x + 5
 
-println(addNum("woo woo "))
-println(addNum(20))
-println(addNum(15.0))
+println(addNum("woo woo ")) //woo woo 5 res6: Unit = ()
+println(addNum(20)) //22 res7: Unit = ()
+println(addNum(15.0)) //25.0 res8: Unit = ()
 
 def addTen(x: Int): Int = x + 10
 def addTen(x: Double): Double = x + 14.0
 
-println(addTen(15))
+println(addTen(15)) // 25 res9: Unit = ()
+
 
 
 /*
@@ -134,8 +139,9 @@ def processNumbers(b: Boolean = true, x: Int, y: Int) = if (b) x else y
 println(processNumbers(x = 5, y = 4))
 
 def addStr(a: String, b: String = "man") = a + b
-println(addStr("Hello ", "world!"))
-println(addStr("Hey "))
+println(addStr("Hello ", "world!")) // Hello world! res11: Unit = ()
+println(addStr("Hey ")) // Hey man res12: Unit = ()
+
 
 /*
 * isInstanceOf will return Boolean whether object is an instance of a type
@@ -149,8 +155,8 @@ val h: String = g.asInstanceOf[String]
 
 def decide(x: Any) = if(x.isInstanceOf[Int]) x.asInstanceOf[Int] + 1 else -1
 
-println(decide(7))
-println(decide(1.0))
+println(decide(7)) // 8 res13: Unit = ()
+println(decide(1.0)) // -1 res14: Unit = ()
 
 /*
 * Parameterized Types maintain type consistency
@@ -163,7 +169,7 @@ println(decide(1.0))
 def decide2[T](b: Boolean, x: T, y: T): T = if (b) x else y
 
 def getNextChar(c: Char) = (c + 1).toChar
-println(getNextChar(decide2(true, 'r', 'd')))
+println(getNextChar(decide2(true, 'r', 'd')))   //s res15: Unit = ()
 
 
 
